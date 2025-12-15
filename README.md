@@ -81,10 +81,11 @@ L’applicazione mostrerà il **menu principale**.
 ### Menu principale:
 
 ```
-1. Gestione Capi (Magazzino)
-2. Gestione Vendite
-3. Statistiche e Report
-4. Gestione Utenti
+1. visualizza tutti i capi
+2. comprare un capo
+3. Restituire un capo
+4. aggiungi nuovo utente
+5. esporta prenotazioni disponibili
 0. Esci
 ```
 
@@ -97,16 +98,17 @@ L’applicazione mostrerà il **menu principale**.
 All’avvio dell’app, viene mostrato il menu principale:
 
 ```
-1. Gestione Capi (Magazzino)
-2. Gestione Vendite
-3. Statistiche e Report
-4. Gestione Utenti
+1. visualizza tutti i capi
+2. comprare un capo
+3. Restituire un capo
+4. aggiungi nuovo utente
+5. esporta prenotazioni disponibili
 0. Esci
 ```
 
 ---
 
-### **1️⃣ Gestione Capi (Magazzino)**
+### **1)Visualizza tutti i capi**
 
 * Se selezioni **1**, puoi visualizzare tutti i capi presenti in magazzino.
 * Verranno mostrati tutti i dettagli disponibili: ID capo, tipologia, marca, taglia, prezzo, stock disponibile.
@@ -114,11 +116,7 @@ All’avvio dell’app, viene mostrato il menu principale:
 
 ---
 
-### **2️⃣ Gestione Vendite**
-
-Il menu vendite permette di **registrare nuovi acquisti** :
-
-#### **Registrare un acquisto**
+### **2)comprare un capo**
 
 1. Scegli l’opzione **2 comprare un capo** nel menu vendite.
 2. L’app chiederà:
@@ -170,7 +168,7 @@ Vendita ID V1 eliminata. Stock aggiornato per C001.
 
 ---
 
-### **4 Gestione Utenti**
+### **4 aggiungi nuovo utente**
 
 * Permette di aggiungere nuovi utenti all’app.
 * L’app chiederà tutti i dati dell’utente:
