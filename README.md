@@ -65,7 +65,7 @@ mvn clean package
 3. Se tutto è corretto, il JAR eseguibile sarà generato in:
 
 ```
-cd target/lookbook-app-1.0-SNAPSHOT-shaded.jar
+cd target
 ```
 
 4. Avvia il programma con:
