@@ -1,0 +1,6 @@
+id;data_inserimento;nome;prezzo;quantita;colore;taglia;marca;disponibile
+C001;15/11/2025;Jeans Uomo Slim Fit;39.99;10;Blu;L;Levi's;SI
+C002;15/11/2025;Maglietta Donna Basic;14.99;15;Bianco;M;H&M;SI
+C003;20/11/2025;Pantaloni Tuta Unisex;29.47;7;Nero;XL;Nike;SI
+C004;25/11/2025;Felpa Con Cappuccio;34.99;20;Grigio;M;Adidas;SI
+C005;01/12/2025;Camicia Elegante Uomo;45.00;12;Bianco;L;Armani;SI
