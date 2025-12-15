@@ -10,22 +10,23 @@
 
 ---
 
-## **📄 Descrizione del progetto
+## **📄📄 Descrizione del progetto
 LookBook è un’applicazione Java per la gestione di un negozio di abbigliamento usato, sviluppata come progetto didattico. L’app permette di gestire facilmente gli utenti, il magazzino e le vendite di capi di seconda mano, fornendo strumenti sia per la gestione interna sia per le transazioni tra utenti.
 Le funzionalità principali corrispondono al menu dell’app:
-Visualizza tutti i capi: permette di vedere tutti i capi disponibili in magazzino, con dettagli su ID capo, tipologia, marca, taglia, prezzo e stock disponibile.
-Comprare un capo: registra un acquisto inserendo ID utente, ID capo e quantità. L’app verifica lo stock e aggiorna automaticamente la disponibilità.
-Restituire un capo: consente di restituire un capo precedentemente acquistato inserendo ID vendita e quantità restituita. Lo stock viene aggiornato di conseguenza.
-Aggiungi nuovo utente: registra un nuovo utente fornendo ID, nome, cognome, data di nascita, indirizzo e documento ID. Al termine, appare il messaggio “Utente registrato correttamente”.
-Esporta prenotazioni disponibili: genera un file CSV con i capi disponibili, includendo ID, data inserimento, tipologia, marca, taglia e prezzo.
-Esci: chiude l’applicazione in modo sicuro.
+-Visualizza tutti i capi: mostra tutti i capi disponibili in magazzino con ID capo, tipologia, marca, taglia, prezzo e stock.
+-Comprare un capo: registra un acquisto inserendo ID utente, ID capo e quantità. Verifica lo stock e aggiorna automaticamente la disponibilità.
+-Restituire un capo: permette di restituire un capo precedentemente acquistato, aggiornando lo stock.
+-Aggiungi nuovo utente: registra un nuovo utente con ID, nome, cognome, data di nascita, indirizzo e documento ID. Alla fine appare il messaggio: “Utente registrato correttamente”.
+-Esporta prenotazioni disponibili: genera un file CSV con i capi disponibili, includendo ID, data inserimento, tipologia, marca, taglia e prezzo.
+-Esci: chiude l’applicazione.
+---
 L’applicazione è stata sviluppata utilizzando:
-Java 17+, per sfruttare le funzionalità moderne del linguaggio.
-Maven, per la gestione delle dipendenze e la build del progetto.
-Programmazione ad oggetti, con separazione chiara tra modelli, servizi e logica applicativa.
-Gestione delle eccezioni e validazione dell’input utente, per garantire robustezza del programma.
-Lettura e scrittura di file CSV, per importare ed esportare dati in modo semplice e compatibile.
-LookBook nasce con l’idea di facilitare la compravendita di abbigliamento usato, promuovendo un modello di consumo sostenibile e dando una seconda vita a capi di qualità dimenticati nell’armadio.
+-Java 17+
+-Maven per gestione dipendenze e build
+-Programmazione ad oggetti, con separazione chiara tra modelli, servizi e logica applicativa
+-Gestione eccezioni e input utente, per garantire robustezza
+-Lettura e scrittura di file CSV, per importare ed esportare dati
+LookBook promuove un modello di consumo sostenibile, dando una seconda vita ai capi dimenticati nell’armadio.
 
 ---
 
