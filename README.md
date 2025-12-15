@@ -199,7 +199,7 @@ Utente registrato correttamente.
 ---
 
 * L’app risponde: nome file d'esportazione: file.csv (esempio)
-* e in automatico ti esporta le prenotazioni disponibili.
+* è in automatico ti esporta le prenotazioni disponibili.
 
 
 
