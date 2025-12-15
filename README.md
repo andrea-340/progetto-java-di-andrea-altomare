@@ -1,133 +1,265 @@
-# progetto-java-di-andrea-altomare
-Perfetto! Posso aiutarti a scrivere un README completo e ben strutturato per il tuo progetto **LookBook App**, includendo tutte le sezioni richieste dall’esame e spiegazioni utili sulle risorse, Maven, Git e JAR. Ecco un esempio pronto da usare:
+
 
 ---
 
-# LookBook App
+# LookBook - Gestione Negozio di Abbigliamento
 
-**Versione:** 1.0-SNAPSHOT
 **Autore:** Andrea Altomare
+**Versione:** 1.0-SNAPSHOT
+**Data:** 2025-12-15
 
 ---
 
-## Descrizione del progetto
+## **📄 Descrizione del progetto**
 
-LookBook App è un’applicazione Java per la gestione di un piccolo negozio di abbigliamento tramite interfaccia a riga di comando (CLI).
-Il progetto consente di:
+LookBook è un’applicazione Java per la gestione di un negozio di abbigliamento, sviluppata come progetto didattico.
+Permette di:
 
-* Visualizzare tutti i capi disponibili in magazzino.
-* Comprare un capo esistente tramite ID capo e ID utente.
-* Restituire un capo tramite ID vendita.
-* Aggiungere nuovi utenti con tutti i dati richiesti.
-* Esportare un file CSV con le prenotazioni disponibili.
-* Uscire dal programma in qualsiasi momento.
+* Gestire utenti (registrazione nuovi utenti).
+* Gestire capi in magazzino (visualizzare capi, stock, prezzi).
+* Registrare vendite e resi.
+* Esportare i dati dei capi disponibili.
+* Visualizzare statistiche di vendite.
 
-Il progetto utilizza **Apache Maven** per la gestione delle dipendenze e la build, e permette di generare un file **JAR eseguibile**.
+L’applicazione è stata sviluppata utilizzando:
+
+* **Java 17+**
+* **Maven** per gestione dipendenze e build
+* Programmazione ad oggetti
+* Gestione eccezioni e input utente
+* Lettura e scrittura di file CSV
 
 ---
 
-## Struttura del progetto
+## **📂 Struttura del progetto**
 
 ```
-lookbook-app/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── app/           # Classe principale App.java
-│   │   │   ├── model/         # Classi modello: Capo.java, Utente.java, Vendita.java
-│   │   │   ├── service/       # Classi di servizio: CapoService.java, UtenteService.java, VenditaService.java
-│   │   │   └── util/          # Loader per file CSV: CapoDataLoader.java, UtenteDataLoader.java, VenditaDataLoader.java
-│   │   └── resources/         # File CSV: utenti.csv, capi.csv, vendite.csv
-├── target/                     # Cartella build Maven
-└── pom.xml                     # File di configurazione Maven
+progetto-java-di-andrea-altomare-main/
+│
+├─ pom.xml                       # Configurazione Maven
+├─ README.md                      # Questo file
+├─ src/
+│   ├─ main/
+│   │   ├─ java/
+│   │   │   ├─ app/
+│   │   │   │   └─ App.java
+│   │   │   ├─ model/            # Classi Utente, Capo, Vendita
+│   │   │   └─ service/          # Service per Utente, Capo, Vendita
+│   │   └─ resources/            # File CSV
+│   │       ├─ utenti.csv
+│   │       ├─ capi.csv
+│   │       └─ vendite.csv
 ```
 
 ---
 
-## Requisiti del progetto
+## **⚙️ Compilazione ed esecuzione con Maven**
 
-1. **Caricamento automatico dei file CSV**
-   I file `utenti.csv`, `capi.csv` e `vendite.csv` vengono caricati automaticamente all’avvio dell’applicazione.
-
-2. **Gestione operazioni utente**
-   Il menu principale consente all’utente di selezionare le operazioni disponibili:
-
-   | Opzione | Funzione                                  |
-   | ------- | ----------------------------------------- |
-   | 1       | Visualizzare tutti i capi                 |
-   | 2       | Comprare un capo esistente                |
-   | 3       | Restituire un capo                        |
-   | 4       | Aggiungere un nuovo utente                |
-   | 5       | Esportare prenotazioni disponibili in CSV |
-   | 0       | Uscire dall’applicazione                  |
-
-3. **Dettagli funzionali principali**
-
-   * **Comprare un capo:** l’utente inserisce `ID Capo`, `ID Utente` e quantità. Lo stock del capo viene aggiornato e viene generata una nuova vendita con ID univoco.
-   * **Restituire un capo:** l’utente inserisce `ID Vendita` e quantità restituita. Lo stock del capo viene aggiornato e la vendita rimossa.
-   * **Aggiungere utente:** l’utente inserisce tutti i dati richiesti (`ID`, `Nome`, `Cognome`, `Data di nascita`, `Indirizzo`, `Documento ID`). L’app conferma la registrazione.
-   * **Esportazione prenotazioni:** genera un file CSV con i capi ancora disponibili (`ID, Data Inserimento, Tipologia, Marca, Taglia, Prezzo, Stock`).
-
----
-
-## Come avviare l’applicazione
-
-### 1. Prerequisiti
-
-* Java JDK 17+
-* Apache Maven 3.x
-* Terminale / prompt dei comandi
-
-### 2. Build del progetto
-
-Dalla cartella principale del progetto, eseguire:
+1. Apri il terminale nella cartella principale del progetto (dove si trova `pom.xml`).
+2. Pulisci e compila il progetto:
 
 ```bash
 mvn clean package
 ```
 
-### 3. Eseguire il file JAR
+3. Se tutto è corretto, il JAR eseguibile sarà generato in:
 
-Dalla cartella `target`:
-
-```bash
-cd target
-java -jar lookbook-app-1.0-SNAPSHOT-shaded.jar
+```
+cd target/lookbook-app-1.0-SNAPSHOT-shaded.jar
 ```
 
-L’app mostrerà il menu principale direttamente a terminale.
+4. Avvia il programma con:
+
+```bash
+java -jar lookbook-app-1.0-SNAPSHOT.jar
+```
+
+L’applicazione mostrerà il **menu principale**.
 
 ---
 
-## Risorse utili
+### Menu principale:
 
-### Cos’è Apache Maven
+```
+1. Gestione Capi (Magazzino)
+2. Gestione Vendite
+3. Statistiche e Report
+4. Gestione Utenti
+0. Esci
+```
 
-* Maven è uno strumento di gestione di progetti Java e build automation.
-* Permette di gestire dipendenze, versioni di librerie e plugin tramite un file **pom.xml**.
-* Consente di creare JAR eseguibili e di separare le librerie dal progetto.
+## **Guida all’utilizzo dell’applicazione LookBook**
 
-### Cos’è Git
+---
 
-* Git è un sistema di **controllo versione distribuito**, fondamentale per sviluppatori.
-* Permette di creare **branch**, tracciare modifiche e collaborare su progetti complessi.
-* Strumenti utili: [Git handbook](https://git-scm.com/book/it/v2), [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow).
+### **Menu principale**
 
-### Cos’è un file JAR
+All’avvio dell’app, viene mostrato il menu principale:
 
-* JAR (Java Archive) raggruppa file `.class` e risorse in un singolo archivio.
-* Permette compressione, protezione tramite firma digitale, portabilità e gestione delle versioni.
-* I JAR possono essere eseguiti con:
-
-```bash
-java -jar nomefile.jar
+```
+1. Gestione Capi (Magazzino)
+2. Gestione Vendite
+3. Statistiche e Report
+4. Gestione Utenti
+0. Esci
 ```
 
 ---
 
+### **1️⃣ Gestione Capi (Magazzino)**
 
-* Tutti i dati vengono caricati dai CSV all’avvio. Assicurarsi che i file siano nella cartella `resources`.
-* La gestione degli errori include controllo dello stock e verifica degli ID inseriti.
-* L’app funziona interamente da terminale, senza interfaccia grafica.
+* Se selezioni **1**, puoi visualizzare tutti i capi presenti in magazzino.
+* Verranno mostrati tutti i dettagli disponibili: ID capo, tipologia, marca, taglia, prezzo, stock disponibile.
+* **Scopo:** sapere quali capi sono disponibili prima di registrarne la vendita.
+
+---
+
+### **2️⃣ Gestione Vendite**
+
+Il menu vendite permette di **registrare nuovi acquisti** :
+
+#### **Registrare un acquisto**
+
+1. Scegli l’opzione **2 comprare un capo** nel menu vendite.
+2. L’app chiederà:
+
+```
+ID Utente: 
+ID Capo: 
+Quantità: 
+```
+
+* Esempio:
+
+```
+ID Utente: U001
+ID Capo: C001
+Quantità: 2
+```
+
+* L’app verificherà lo stock e registrerà la vendita, mostrando un messaggio tipo:
+
+```
+Vendita di 2x Maglietta completata. ID vendita: V1
+```
+
+
+#### **Restituire un capo acquistato**
+
+* Scegli l’opzione **3** nel menu vendite.
+* L’app chiederà:
+
+```
+ID Vendita : 
+Quantità restituita: 
+```
+
+* **Come funziona:** devi inserire **l’ID della vendita precedentemente registrata**.
+* Esempio: se in precedenza hai comprato 2 capi con ID vendita `V1`:
+
+```
+ID Vendita : V1
+Quantità restituita: 2
+```
+
+* L’app aggiornerà lo stock e confermerà:
+
+```
+Vendita ID V1 eliminata. Stock aggiornato per C001.
+```
+
+---
+
+### **4 Gestione Utenti**
+
+* Permette di aggiungere nuovi utenti all’app.
+* L’app chiederà tutti i dati dell’utente:
+
+```
+ID Utente: 
+Nome: 
+Cognome: 
+Data Nascita: 
+Indirizzo: 
+Documento ID: 
+```
+
+* Alla fine apparirà il messaggio:
+
+```
+Utente registrato correttamente.
+```
+
+---
+
+### **5 esporta le prenotazioni disponibili**
+
+
+
+---
+
+* L’app risponde: nome file d'esportazione: file.csv (esempio)
+* e in automatico ti esporta le prenotazioni disponibili.
+
+
+
+
+---
+
+## **💾 File CSV di esempio**
+
+* **utenti.csv**
+
+```
+id;nome;cognome;dataNascita;indirizzo;documentoId
+U1;Mario;Rossi;1990-01-01;Via Roma 1;AA123456
+```
+
+* **capi.csv**
+
+```
+id;dataInserimento;tipologia;prezzo;stock;colore;taglia;marca;materiale
+C1;2025-01-01;Maglietta;25.0;10;Rosso;M;Nike;Cotone
+```
+
+* **vendite.csv**
+
+```
+idVendita;idUtente;idCapo;quantita;prezzoTotale
+V1;U1;C1;2;50.0
+```
+
+---
+
+## **📌 Note importanti**
+
+* Tutti i file CSV devono essere nella cartella `src/main/resources/`.
+* Il JAR generato con **Maven Shade Plugin** include tutte le dipendenze, quindi può essere eseguito su qualsiasi computer con Java 17+.
+* Per modifiche al codice, ricompilare sempre con Maven:
+
+```bash
+mvn clean package
+```
+
+---
+
+## **📖 Risorse utili**
+
+* [Java JDK](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+* [Apache Maven](https://maven.apache.org/)
+* [Git Handbook](https://git-scm.com/book/en/v2)
+* [Documentazione Shade Plugin Maven](https://maven.apache.org/plugins/maven-shade-plugin/)
+
+---
+
+## **🔗 Collegamento GitHub**
+
+Il repository ufficiale con tutto il codice sorgente e le istruzioni è disponibile qui:
+
+```
+https://github.com/andrea-340/progetto-java-di-andrea-altomare.git
+```
+
+---
 
 
